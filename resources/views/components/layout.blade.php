@@ -37,15 +37,10 @@
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                < <a href="/"
-                                    class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                                    aria-current="page">Inicio</a>
-                                    <a href="/about"
-                                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Nuestro
-                                        Servicios</a>
-                                    <a href="/contact"
-                                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Quienes
-                                        Somos</a>
+                                <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+                                <x-nav-link href="/about" :active="request()->is('about')">Nuestro Servicios</x-nav-link>
+                                <x-nav-link href="/contact" :active="request()->is('contact')">Contáctanos</x-nav-link>
+
 
                             </div>
                         </div>
@@ -53,8 +48,6 @@
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
 
-
-                            <!-- Profile dropdown -->
                             <div class="relative ml-3">
                                 <div>
                                     <button type="button"
@@ -131,11 +124,11 @@
             </div>
         </nav>
 
-        <header class="bg-white shadow">
+        {{-- <header class="bg-white shadow">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $cabecero }}</h1>
             </div>
-        </header>
+        </header> --}}
         <main>
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 {{ $slot }}
